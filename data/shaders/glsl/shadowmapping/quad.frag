@@ -11,7 +11,8 @@ float LinearizeDepth(float depth)
   float n = 1.0; // camera z near
   float f = 128.0; // camera z far
   float z = depth;
-  return (2.0 * n) / (f + n - z * (f - n));	
+  //return (2.0 * n) / (f + n - z * (f - n));	
+  return ( n * f) / (-f+ depth * (f - n));	
 }
 
 void main() 
